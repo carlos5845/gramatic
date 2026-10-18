@@ -1,0 +1,110 @@
+[
+    {
+        "category": "Correct Sentence",
+        "description": "Oración simple correcta sin errores",
+        "original_text": "This is a completely correct sentence .",
+        "corrected_text": "This is a completely correct sentence.",
+        "expected_intent": "Conservar el texto sin alteraciones innecesarias",
+        "is_changed": true,
+        "inference_time_ms": 1121.06
+    },
+    {
+        "category": "Correct Sentence",
+        "description": "Oración formal correcta con cláusula subordinada",
+        "original_text": "I am writing to inform you that I have received the package .",
+        "corrected_text": "I am writing to inform you that I have received the package.",
+        "expected_intent": "Conservar el texto idéntico",
+        "is_changed": true,
+        "inference_time_ms": 376.25
+    },
+    {
+        "category": "Subject-Verb Agreement",
+        "description": "Error en tercera persona singular (She go -> She goes)",
+        "original_text": "She go to work by bus every morning .",
+        "corrected_text": "She goes to work by bus every morning.",
+        "expected_intent": "Corregir 'go' por 'goes'",
+        "is_changed": true,
+        "inference_time_ms": 225.64
+    },
+    {
+        "category": "Subject-Verb Agreement",
+        "description": "Sujeto plural con verbo singular (They is -> They are)",
+        "original_text": "They is very happy with the results of the project .",
+        "corrected_text": "They are very happy with the results of the project.",
+        "expected_intent": "Corregir 'is' por 'are'",
+        "is_changed": true,
+        "inference_time_ms": 243.36
+    },
+    {
+        "category": "Verb Tense",
+        "description": "Tiempo pasado con marcador temporal (saw/saws -> saw, go yesterday -> went)",
+        "original_text": "Yesterday I see my old friend at the train station .",
+        "corrected_text": "Yesterday, I saw my old friend at the train station.",
+        "expected_intent": "Corregir 'see' por 'saw'",
+        "is_changed": true,
+        "inference_time_ms": 245.7
+    },
+    {
+        "category": "Verb Tense",
+        "description": "Incoherencia en tiempo verbal compuesto",
+        "original_text": "He has went to London three times this year .",
+        "corrected_text": "He has been to London three times this year.",
+        "expected_intent": "Corregir 'went' por 'gone'",
+        "is_changed": true,
+        "inference_time_ms": 219.86
+    },
+    {
+        "category": "Articles & Determiners",
+        "description": "Artículo indefinido incorrecto antes de vocal (a apple -> an apple)",
+        "original_text": "I would like to eat a apple and a orange .",
+        "corrected_text": "I would like to eat an apple and an orange.",
+        "expected_intent": "Corregir 'a apple' por 'an apple' y 'a orange' por 'an orange'",
+        "is_changed": true,
+        "inference_time_ms": 231.3
+    },
+    {
+        "category": "Articles & Determiners",
+        "description": "Omisión de artículo determinado o indefinido",
+        "original_text": "Because I intend to take examination in September .",
+        "corrected_text": "Because I intend to take an examination in September.",
+        "expected_intent": "Insertar artículo 'an examination'",
+        "is_changed": true,
+        "inference_time_ms": 219.26
+    },
+    {
+        "category": "Prepositions",
+        "description": "Preposición dependiente incorrecta (interested on -> interested in)",
+        "original_text": "I am very interested on learning foreign languages .",
+        "corrected_text": "I am very interested in learning foreign languages.",
+        "expected_intent": "Corregir 'interested on' por 'interested in'",
+        "is_changed": true,
+        "inference_time_ms": 219.62
+    },
+    {
+        "category": "Prepositions",
+        "description": "Preposición de lugar incorrecta (stay at cabins -> stay in cabins)",
+        "original_text": "I would prefer to stay at log cabins rather than tents .",
+        "corrected_text": "I would prefer to stay in log cabins rather than tents.",
+        "expected_intent": "Corregir 'at' por 'in'",
+        "is_changed": true,
+        "inference_time_ms": 243.31
+    },
+    {
+        "category": "Multiple Errors",
+        "description": "Múltiples errores: ortografía + tiempo verbal + preposición",
+        "original_text": "I saws the show 's advertisement hanging up of a wall in London .",
+        "corrected_text": "I saw the show's advertisement hanging up on a wall in London.",
+        "expected_intent": "Corregir 'saws' -> 'saw', 'up of' -> 'on'",
+        "is_changed": true,
+        "inference_time_ms": 255.6
+    },
+    {
+        "category": "Multiple Errors",
+        "description": "Múltiples errores: doble negación + concordancia + plural incorrecto",
+        "original_text": "She dont has no time to do her homeworks .",
+        "corrected_text": "She doesn't have any time to do her homework.",
+        "expected_intent": "Corregir 'dont has no' -> 'does not have any' y 'homeworks' -> 'homework'",
+        "is_changed": true,
+        "inference_time_ms": 213.88
+    }
+]

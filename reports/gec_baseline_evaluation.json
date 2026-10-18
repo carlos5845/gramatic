@@ -1,0 +1,15 @@
+{
+    "model_name": "Unbabel/gec-t5_small",
+    "dataset": "FCE Dev (v2.1 BEA19)",
+    "total_sentences": 2191,
+    "error_sentences_count": 1370,
+    "clean_sentences_count": 821,
+    "exact_match_normalized_pct": 43.18,
+    "exact_match_raw_pct": 3.97,
+    "exact_match_error_sentences_normalized_pct": 18.91,
+    "clean_sentence_preservation_normalized_pct": 83.68,
+    "total_eval_time_seconds": 102.93,
+    "avg_inference_latency_ms": 46.98,
+    "throughput_sentences_per_sec": 21.29,
+    "device": "cuda"
+}

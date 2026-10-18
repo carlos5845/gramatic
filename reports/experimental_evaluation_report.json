@@ -1,0 +1,81 @@
+{
+    "task_ged_evaluation": {
+        "bert": {
+            "precision": 0.7395776935571197,
+            "recall": 0.3965166908563135,
+            "f1": 0.5162509448223734,
+            "f0.5": 0.6304809378750116,
+            "accuracy": 0.9258916164891153
+        },
+        "baseline": {
+            "precision": 0.214,
+            "recall": 0.4723,
+            "f1": 0.2946,
+            "f0.5": 0.2403,
+            "accuracy": 0.8124
+        }
+    },
+    "task_gec_evaluation": {
+        "fce_dev": {
+            "pretrained": {
+                "precision": 0.4750337381916329,
+                "recall": 0.30051223676721683,
+                "f0.5": 0.4256005158794131,
+                "f1": 0.3681366567892626,
+                "tp": 1056,
+                "fp": 1167,
+                "fn": 2458,
+                "false_edits": 300,
+                "clean_preservation_rate": 0.8641509433962264,
+                "avg_latency_ms": 25.350131401186648,
+                "sentences_per_sec": 39.447527280004145
+            },
+            "finetuned": {
+                "precision": 0.4932716568544996,
+                "recall": 0.3338076266363119,
+                "f0.5": 0.4502533394748964,
+                "f1": 0.3981670061099796,
+                "tp": 1173,
+                "fp": 1205,
+                "fn": 2341,
+                "false_edits": 360,
+                "clean_preservation_rate": 0.8955974842767296,
+                "avg_latency_ms": 27.005553491557148,
+                "sentences_per_sec": 37.02942064537333
+            }
+        },
+        "fce_test": {
+            "pretrained": {
+                "precision": 0.492176386913229,
+                "recall": 0.29247675401521556,
+                "f0.5": 0.43304130162703375,
+                "f1": 0.3669141039236479,
+                "tp": 1384,
+                "fp": 1428,
+                "fn": 3348,
+                "false_edits": 454,
+                "clean_preservation_rate": 0.8615916955017301,
+                "avg_latency_ms": 22.895776326530246,
+                "sentences_per_sec": 43.67617790016843
+            },
+            "finetuned": {
+                "precision": 0.5130234091658424,
+                "recall": 0.32882502113271345,
+                "f0.5": 0.461337760910816,
+                "f1": 0.40077269800386356,
+                "tp": 1556,
+                "fp": 1477,
+                "fn": 3176,
+                "false_edits": 541,
+                "clean_preservation_rate": 0.8742791234140715,
+                "avg_latency_ms": 21.967344230055705,
+                "sentences_per_sec": 45.522116352681394
+            }
+        }
+    },
+    "efficiency_summary": {
+        "bert_ged_latency_ms_per_token": 0.15,
+        "gec_t5_latency_ms_per_sentence": 21.967344230055705,
+        "gec_t5_throughput_sent_sec": 45.522116352681394
+    }
+}
