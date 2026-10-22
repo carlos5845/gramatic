@@ -86,31 +86,35 @@ export const DiffViewer: React.FC<DiffViewerProps> = ({
   };
 
   return (
-    <div className="bg-white rounded-2xl border border-slate-200 shadow-sm p-4 sm:p-5 my-4">
-      <div className="flex items-center justify-between mb-3 pb-2 border-b border-slate-100">
+    <div className="bg-white rounded-3xl border-2 border-slate-900 shadow-brutal p-4 sm:p-5 my-4">
+      <div className="flex items-center justify-between mb-3 pb-2 border-b-2 border-slate-900 flex-wrap gap-2">
         <div className="flex items-center space-x-2">
-          <GitCompare className="w-4 h-4 text-indigo-600" />
-          <span className="font-semibold text-slate-800 text-sm">
+          <div className="w-8 h-8 rounded-xl bg-brutal-yellow border-1.5 border-slate-900 flex items-center justify-center text-slate-900 shadow-brutal-xs">
+            <GitCompare className="w-4 h-4 text-slate-900" />
+          </div>
+          <span className="font-black text-slate-900 text-sm">
             Comparativa de Ediciones (Diff)
           </span>
         </div>
-        <div className="flex items-center space-x-1 bg-slate-100 p-0.5 rounded-lg text-xs">
+
+        {/* Neobrutalist Segment Control (as in reference image) */}
+        <div className="flex items-center border-2 border-slate-900 rounded-full bg-white p-0.5 shadow-brutal-xs text-xs">
           <button
             onClick={() => setViewMode("inline")}
-            className={`px-2.5 py-1 rounded-md font-medium transition-colors cursor-pointer ${
+            className={`px-3 py-1 rounded-full font-bold transition-all cursor-pointer ${
               viewMode === "inline"
-                ? "bg-white text-indigo-700 shadow-xs"
-                : "text-slate-600 hover:text-slate-900"
+                ? "bg-teal-500 text-white shadow-xs"
+                : "text-slate-700 hover:text-slate-900"
             }`}
           >
             Vista Unificada
           </button>
           <button
             onClick={() => setViewMode("split")}
-            className={`px-2.5 py-1 rounded-md font-medium transition-colors cursor-pointer ${
+            className={`px-3 py-1 rounded-full font-bold transition-all cursor-pointer ${
               viewMode === "split"
-                ? "bg-white text-indigo-700 shadow-xs"
-                : "text-slate-600 hover:text-slate-900"
+                ? "bg-teal-500 text-white shadow-xs"
+                : "text-slate-700 hover:text-slate-900"
             }`}
           >
             Vista Dividida
@@ -119,18 +123,18 @@ export const DiffViewer: React.FC<DiffViewerProps> = ({
       </div>
 
       {viewMode === "inline" ? (
-        <div className="p-3.5 bg-slate-50/70 rounded-xl border border-slate-100 text-base leading-relaxed">
+        <div className="p-4 bg-slate-50 rounded-2xl border-2 border-slate-900 text-base leading-relaxed text-slate-900">
           {renderInlineDiff()}
         </div>
       ) : (
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
-          <div className="p-3 bg-rose-50/40 rounded-xl border border-rose-100">
-            <div className="text-xs font-semibold text-rose-700 mb-1">Original:</div>
-            <div className="text-slate-800">{originalText}</div>
+          <div className="p-3.5 bg-rose-50/70 rounded-2xl border-2 border-slate-900">
+            <div className="text-xs font-black text-rose-800 mb-1">Texto Original:</div>
+            <div className="text-slate-900 font-medium">{originalText}</div>
           </div>
-          <div className="p-3 bg-emerald-50/40 rounded-xl border border-emerald-100">
-            <div className="text-xs font-semibold text-emerald-700 mb-1">Corregido:</div>
-            <div className="text-slate-800 font-medium">{correctedText}</div>
+          <div className="p-3.5 bg-teal-50/70 rounded-2xl border-2 border-slate-900">
+            <div className="text-xs font-black text-teal-800 mb-1">Texto Corregido:</div>
+            <div className="text-slate-900 font-bold">{correctedText}</div>
           </div>
         </div>
       )}

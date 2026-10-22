@@ -19,46 +19,46 @@ export const MetricsBar: React.FC<MetricsBarProps> = ({ analysis }) => {
   return (
     <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 my-4">
       {/* GED Errors */}
-      <div className="bg-white p-3.5 rounded-xl border border-slate-200 shadow-xs flex items-center space-x-3">
-        <div className="w-10 h-10 rounded-lg bg-rose-50 border border-rose-100 flex items-center justify-center text-rose-600">
-          <AlertCircle className="w-5 h-5" />
+      <div className="bg-white p-3.5 rounded-2xl border-2 border-slate-900 shadow-brutal-sm flex items-center space-x-3">
+        <div className="w-10 h-10 rounded-xl bg-brutal-pinkLight border-1.5 border-slate-900 flex items-center justify-center text-slate-900 shadow-brutal-xs">
+          <AlertCircle className="w-5 h-5 text-rose-600" />
         </div>
         <div>
-          <div className="text-xl font-bold text-slate-800">{gedErrors}</div>
-          <div className="text-xs text-slate-500 font-medium">Errores BERT (GED)</div>
+          <div className="text-xl font-black text-slate-900">{gedErrors}</div>
+          <div className="text-[11px] text-slate-600 font-bold">Tokens BERT</div>
         </div>
       </div>
 
       {/* GEC Corrections */}
-      <div className="bg-white p-3.5 rounded-xl border border-slate-200 shadow-xs flex items-center space-x-3">
-        <div className="w-10 h-10 rounded-lg bg-indigo-50 border border-indigo-100 flex items-center justify-center text-indigo-600">
-          <CheckCircle className="w-5 h-5" />
+      <div className="bg-white p-3.5 rounded-2xl border-2 border-slate-900 shadow-brutal-sm flex items-center space-x-3">
+        <div className="w-10 h-10 rounded-xl bg-brutal-blueLight border-1.5 border-slate-900 flex items-center justify-center text-slate-900 shadow-brutal-xs">
+          <CheckCircle className="w-5 h-5 text-brutal-blue" />
         </div>
         <div>
-          <div className="text-xl font-bold text-slate-800">{gecEdits}</div>
-          <div className="text-xs text-slate-500 font-medium">Ediciones T5 (GEC)</div>
+          <div className="text-xl font-black text-slate-900">{gecEdits}</div>
+          <div className="text-[11px] text-slate-600 font-bold">Ediciones T5</div>
         </div>
       </div>
 
       {/* Concordance Rate */}
-      <div className="bg-white p-3.5 rounded-xl border border-slate-200 shadow-xs flex items-center space-x-3">
-        <div className="w-10 h-10 rounded-lg bg-emerald-50 border border-emerald-100 flex items-center justify-center text-emerald-600">
-          <ArrowRightLeft className="w-5 h-5" />
+      <div className="bg-white p-3.5 rounded-2xl border-2 border-slate-900 shadow-brutal-sm flex items-center space-x-3">
+        <div className="w-10 h-10 rounded-xl bg-brutal-tealLight border-1.5 border-slate-900 flex items-center justify-center text-slate-900 shadow-brutal-xs">
+          <ArrowRightLeft className="w-5 h-5 text-teal-700" />
         </div>
         <div>
-          <div className="text-xl font-bold text-slate-800">{concordanceRate}%</div>
-          <div className="text-xs text-slate-500 font-medium">Concordancia BERT/GEC</div>
+          <div className="text-xl font-black text-slate-900">{concordanceRate}%</div>
+          <div className="text-[11px] text-slate-600 font-bold">Concordancia</div>
         </div>
       </div>
 
       {/* Inference Time */}
-      <div className="bg-white p-3.5 rounded-xl border border-slate-200 shadow-xs flex items-center space-x-3">
-        <div className="w-10 h-10 rounded-lg bg-amber-50 border border-amber-100 flex items-center justify-center text-amber-600">
-          <Zap className="w-5 h-5" />
+      <div className="bg-white p-3.5 rounded-2xl border-2 border-slate-900 shadow-brutal-sm flex items-center space-x-3">
+        <div className="w-10 h-10 rounded-xl bg-brutal-yellow border-1.5 border-slate-900 flex items-center justify-center text-slate-900 shadow-brutal-xs">
+          <Zap className="w-5 h-5 text-slate-900" />
         </div>
         <div>
-          <div className="text-xl font-bold text-slate-800">{timeMs} ms</div>
-          <div className="text-xs text-slate-500 font-medium">Tiempo de Inferencia</div>
+          <div className="text-xl font-black text-slate-900">{timeMs} ms</div>
+          <div className="text-[11px] text-slate-600 font-bold">Latencia</div>
         </div>
       </div>
     </div>

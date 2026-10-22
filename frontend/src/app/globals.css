@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 :root {
-  --background: #f8fafc;
-  --foreground: #0f172a;
+  --background: #D9F5EE;
+  --foreground: #0F172A;
 }
 
 body {
@@ -14,21 +14,41 @@ body {
   min-height: 100vh;
 }
 
+::selection {
+  background-color: #FEE166;
+  color: #0F172A;
+}
+
 /* Custom scrollbars */
 ::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
+  width: 8px;
+  height: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f5f9;
+  background: #C4EDE4;
+  border-left: 2px solid #0F172A;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #cbd5e1;
-  border-radius: 3px;
+  background: #0F172A;
+  border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #94a3b8;
+  background: #2B59FF;
+}
+
+/* Neobrutalist button press effects */
+.brutal-btn {
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+.brutal-btn:hover {
+  transform: translate(-1.5px, -1.5px);
+}
+
+.brutal-btn:active {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0px #0F172A !important;
 }

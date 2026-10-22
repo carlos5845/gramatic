@@ -120,76 +120,76 @@ export const TaxonomyModal: React.FC<TaxonomyModalProps> = ({
   );
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/50 backdrop-blur-xs animate-in fade-in duration-200">
-      <div className="bg-white rounded-3xl border border-slate-200 shadow-2xl w-full max-w-3xl max-h-[85vh] flex flex-col overflow-hidden">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-xs animate-in fade-in duration-200">
+      <div className="bg-white rounded-3xl border-3 border-slate-900 shadow-brutal-lg w-full max-w-3xl max-h-[85vh] flex flex-col overflow-hidden">
         {/* Modal Header */}
-        <div className="p-5 border-b border-slate-100 flex items-center justify-between">
+        <div className="p-5 border-b-2 border-slate-900 flex items-center justify-between bg-brutal-yellow">
           <div className="flex items-center space-x-3">
-            <div className="w-10 h-10 rounded-xl bg-indigo-50 border border-indigo-100 flex items-center justify-center text-indigo-600">
+            <div className="w-10 h-10 rounded-xl bg-white border-2 border-slate-900 flex items-center justify-center text-slate-900 shadow-brutal-xs">
               <BookOpen className="w-5 h-5" />
             </div>
             <div>
-              <h2 className="text-lg font-bold text-slate-800">
-                Taxonomía Pedagógica de Errores Gramaticales
+              <h2 className="text-lg font-black text-slate-900">
+                Taxonomía Pedagógica de Errores
               </h2>
-              <p className="text-xs text-slate-500">
-                Clasificación lingüística adaptada con ERRANT para estudiantes de inglés (FCE/BEA)
+              <p className="text-xs font-semibold text-slate-800">
+                Clasificación lingüística adaptada con ERRANT para estudiantes L2
               </p>
             </div>
           </div>
           <button
             onClick={onClose}
-            className="p-2 text-slate-400 hover:text-slate-600 rounded-lg hover:bg-slate-100 transition-colors"
+            className="brutal-btn p-2 text-slate-900 bg-white hover:bg-slate-100 rounded-xl border-2 border-slate-900 shadow-brutal-xs transition-colors cursor-pointer"
           >
             <X className="w-5 h-5" />
           </button>
         </div>
 
         {/* Search Bar */}
-        <div className="p-4 border-b border-slate-100 bg-slate-50">
+        <div className="p-4 border-b-2 border-slate-900 bg-slate-50">
           <div className="relative">
-            <Search className="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2" />
+            <Search className="w-4 h-4 text-slate-900 absolute left-3 top-1/2 -translate-y-1/2 font-bold" />
             <input
               type="text"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Buscar categoría gramatical o concepto..."
-              className="w-full pl-9 pr-3 py-2 text-sm bg-white border border-slate-200 rounded-xl focus:outline-hidden focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100"
+              className="w-full pl-9 pr-3 py-2 text-sm font-medium bg-white border-2 border-slate-900 rounded-xl shadow-brutal-xs focus:outline-hidden"
             />
           </div>
         </div>
 
         {/* Categories List */}
-        <div className="p-5 overflow-y-auto space-y-3 flex-1">
+        <div className="p-5 overflow-y-auto space-y-3 flex-1 bg-slate-50/50">
           {loading ? (
-            <div className="py-12 text-center text-slate-400">
-              <div className="w-6 h-6 border-2 border-indigo-600 border-t-transparent rounded-full animate-spin mx-auto mb-2" />
+            <div className="py-12 text-center text-slate-600 font-bold">
+              <div className="w-6 h-6 border-2 border-slate-900 border-t-transparent rounded-full animate-spin mx-auto mb-2" />
               <span>Cargando categorías...</span>
             </div>
           ) : filtered.length === 0 ? (
-            <div className="py-12 text-center text-slate-400">
+            <div className="py-12 text-center text-slate-600 font-bold">
               No se encontraron categorías con el término ingresado.
             </div>
           ) : (
             filtered.map((cat, idx) => (
               <div
                 key={cat.id}
-                className="p-3.5 bg-slate-50 rounded-xl border border-slate-200/80 hover:border-indigo-300 transition-colors"
+                className="p-4 bg-white rounded-2xl border-2 border-slate-900 shadow-brutal-xs hover:shadow-brutal transition-all"
               >
-                <div className="flex items-center justify-between mb-1">
+                <div className="flex items-center justify-between mb-1 flex-wrap gap-1">
                   <div className="flex items-center space-x-2">
-                    <span className="w-5 h-5 rounded-md bg-indigo-100 text-indigo-700 text-xs font-bold flex items-center justify-center">
+                    <span className="w-6 h-6 rounded-lg bg-brutal-yellow text-slate-900 text-xs font-black border-1.5 border-slate-900 flex items-center justify-center shadow-brutal-xs">
                       {idx + 1}
                     </span>
-                    <span className="font-semibold text-slate-800 text-sm">
+                    <span className="font-black text-slate-900 text-sm">
                       {cat.name_es}
                     </span>
                   </div>
-                  <span className="text-xs font-mono text-indigo-600 bg-indigo-50 px-2 py-0.5 rounded border border-indigo-100">
+                  <span className="text-xs font-mono font-bold text-slate-900 bg-brutal-tealLight px-2.5 py-0.5 rounded-full border-1.5 border-slate-900">
                     {cat.name_en}
                   </span>
                 </div>
-                <p className="text-xs text-slate-600 mt-1 leading-relaxed pl-7">
+                <p className="text-xs text-slate-700 mt-1 leading-relaxed pl-8 font-medium">
                   {cat.description_es}
                 </p>
               </div>
@@ -198,10 +198,10 @@ export const TaxonomyModal: React.FC<TaxonomyModalProps> = ({
         </div>
 
         {/* Footer */}
-        <div className="p-4 border-t border-slate-100 bg-slate-50 flex justify-end">
+        <div className="p-4 border-t-2 border-slate-900 bg-white flex justify-end">
           <button
             onClick={onClose}
-            className="px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-semibold rounded-xl transition-colors shadow-xs"
+            className="brutal-btn px-5 py-2 bg-brutal-blue hover:bg-brutal-blueHover text-white text-xs font-black rounded-xl border-2 border-slate-900 shadow-brutal-xs transition-colors cursor-pointer"
           >
             Entendido
           </button>

@@ -20,64 +20,63 @@ export const Header: React.FC<HeaderProps> = ({
   const isHealthy = backendHealth?.status === "healthy";
 
   return (
-    <header className="bg-white border-b border-slate-200 sticky top-0 z-30 shadow-xs">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+    <header className="sticky top-0 z-30 pt-3 px-4 sm:px-6">
+      <div className="max-w-5xl mx-auto bg-white border-2 border-slate-900 rounded-2xl shadow-brutal px-4 sm:px-6 h-16 flex items-center justify-between">
         {/* Logo & Brand */}
         <div className="flex items-center space-x-3">
-          <div className="w-10 h-10 rounded-xl bg-linear-to-tr from-indigo-600 to-violet-500 flex items-center justify-center text-white shadow-md shadow-indigo-100">
-            <Sparkles className="w-5 h-5" />
+          <div className="w-10 h-10 rounded-xl bg-brutal-blue border-2 border-slate-900 flex items-center justify-center text-white shadow-brutal-xs">
+            <Sparkles className="w-5 h-5 text-white" />
           </div>
           <div>
             <div className="flex items-center space-x-2">
-              <span className="text-xl font-bold bg-linear-to-r from-indigo-700 to-violet-600 bg-clip-text text-transparent">
-                GrammarAI
+              <span className="text-lg font-black tracking-tight text-slate-900">
+                UwUAI
               </span>
-              <span className="px-2 py-0.5 text-xs font-semibold bg-indigo-50 text-indigo-700 rounded-full border border-indigo-200">
-                BERT + T5 + ERRANT
+              <span className="px-2 py-0.5 text-[11px] font-bold bg-brutal-yellow text-slate-900 rounded-full border-1.5 border-slate-900 shadow-brutal-xs">
+                BERT + T5
               </span>
             </div>
-            <p className="text-xs text-slate-500 hidden sm:block">
-              Detección, Corrección y Explicaciones Pedagógicas de Gramática en Inglés
+            <p className="text-[11px] font-medium text-slate-600 hidden sm:block">
+              Asistente Pedagógico Conversacional de Inglés L2
             </p>
           </div>
         </div>
 
         {/* Actions & Status */}
-        <div className="flex items-center space-x-3">
+        <div className="flex items-center space-x-2.5">
           {/* Taxonomy Button */}
           <button
             onClick={onOpenTaxonomy}
-            className="flex items-center space-x-1.5 px-3 py-1.5 text-xs font-medium text-slate-700 bg-slate-100 hover:bg-slate-200 rounded-lg transition-colors border border-slate-200"
+            className="brutal-btn flex items-center space-x-1.5 px-3 py-1.5 text-xs font-bold text-slate-900 bg-brutal-yellow hover:bg-brutal-yellowHover rounded-xl border-2 border-slate-900 shadow-brutal-xs cursor-pointer"
             title="Ver Taxonomía Gramatical Pedagógica"
           >
-            <BookOpen className="w-4 h-4 text-slate-500" />
-            <span className="hidden md:inline">Taxonomía Gramatical</span>
+            <BookOpen className="w-3.5 h-3.5 text-slate-900" />
+            <span className="hidden md:inline">Taxonomía</span>
           </button>
 
           {/* Backend Status Badge */}
-          <div className="flex items-center space-x-2 bg-slate-50 px-3 py-1.5 rounded-lg border border-slate-200 text-xs">
-            <span className="text-slate-500 font-medium hidden sm:inline">Backend:</span>
+          <div className="flex items-center space-x-2 bg-slate-50 px-3 py-1.5 rounded-xl border-2 border-slate-900 shadow-brutal-xs text-xs">
             {healthLoading ? (
-              <span className="flex items-center text-amber-600 space-x-1">
+              <span className="flex items-center text-amber-700 space-x-1.5 font-bold">
                 <RefreshCw className="w-3.5 h-3.5 animate-spin" />
-                <span>Verificando...</span>
+                <span className="hidden sm:inline">Conectando...</span>
               </span>
             ) : isHealthy ? (
-              <span className="flex items-center text-emerald-600 space-x-1 font-semibold">
-                <CheckCircle2 className="w-4 h-4 text-emerald-500" />
-                <span>En línea ({backendHealth?.device || "CPU/GPU"})</span>
+              <span className="flex items-center text-emerald-800 space-x-1.5 font-bold">
+                <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 border border-slate-900 animate-pulse" />
+                <span>Online</span>
               </span>
             ) : (
-              <span className="flex items-center text-rose-600 space-x-1 font-semibold">
-                <AlertTriangle className="w-4 h-4 text-rose-500" />
-                <span>Desconectado</span>
+              <span className="flex items-center text-rose-700 space-x-1.5 font-bold">
+                <span className="w-2.5 h-2.5 rounded-full bg-rose-500 border border-slate-900" />
+                <span>Offline</span>
               </span>
             )}
             <button
               onClick={onRefreshHealth}
               disabled={healthLoading}
-              title="Actualizar estado del servidor"
-              className="text-slate-400 hover:text-slate-600 transition-colors p-0.5 rounded"
+              title="Refrescar estado"
+              className="text-slate-500 hover:text-slate-900 transition-colors p-0.5 rounded cursor-pointer"
             >
               <RefreshCw className={`w-3.5 h-3.5 ${healthLoading ? "animate-spin" : ""}`} />
             </button>
